@@ -1,0 +1,15 @@
+<mat-selection-list
+  [multiple]="false"
+  (selectionChange)="onModelChange($event.option.value)"
+>
+  <mat-list-option
+    *ngFor="let model of models | async"
+    [value]="model"
+    [selected]="
+      (selectedModel | async) !== null &&
+      (selectedModel | async).name === model.name
+    "
+  >
+    {{ model.name }}
+  </mat-list-option>
+</mat-selection-list>

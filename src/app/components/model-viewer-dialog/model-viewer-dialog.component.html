@@ -1,0 +1,33 @@
+<div class="title">
+  <h2 mat-dialog-title>{{ model.name }}</h2>
+</div>
+<mat-dialog-content class="mat-typography">
+  <model-viewer
+    [src]="model.url"
+    camera-controls
+    min-field-of-view="1deg"
+    class="main"
+  ></model-viewer>
+</mat-dialog-content>
+<mat-dialog-actions dir="rtl">
+  <mat-form-field appearance="outline">
+    <mat-label>איכות המודל</mat-label>
+    <mat-select>
+      <mat-option
+        *ngFor="let quality of qualities"
+        [value]="quality"
+        (onSelectionChange)="selectionChanged($event)"
+      >
+        {{ quality }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    style="margin: 20px; margin-top: 0px;"
+    mat-raised-button
+    color="primary"
+    (click)="onClick()"
+  >
+    הורד מודל
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,15 @@
+:host {
+  height: 100%;
+  width: 100%;
+  direction: rtl;
+  display: flex;
+}
+
+.floating-viewer {
+  position: absolute;
+  left: 35px;
+  padding: 10px;
+  height: 35%;
+  width: 35%;
+  z-index: 400;
+}
